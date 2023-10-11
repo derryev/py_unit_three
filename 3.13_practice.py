@@ -3,7 +3,8 @@
 
 
 def print_instructions():
-    """this function takes no parameters and prints out instructions to the user
+    """
+    this function takes no parameters and prints out instructions to the user
     :return: none
     """
     print("This program converts Fahrenheit to Celsius")
