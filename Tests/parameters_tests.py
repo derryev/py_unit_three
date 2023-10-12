@@ -43,7 +43,18 @@ class MyTestCase(unittest.TestCase):
         and a negative number
         :return: none
         """
-        pass
+        import sys
+        from io import StringIO
+        saved_stdout = sys.stdout
+        try:
+            out = StringIO()
+            sys.stdout = out
+            addition.add_two(-10,9)
+            output = out.getvalue().strip()
+            assert output == "The sum of -10 and 9 is -1"
+        finally:
+            sys.standout = saved_stdout
+
 
     def test_adding_two_negatives(self):
         """
@@ -51,7 +62,17 @@ class MyTestCase(unittest.TestCase):
         negative numbers.
         :return: none
         """
-        pass
+        import sys
+        from io import StringIO
+        saved_stdout = sys.stdout
+        try:
+            out = StringIO()
+            sys.stdout = out
+            addition.add_two(-10, -10)
+            output = out.getvalue().strip()
+            assert output == "The sum of -10 and -10 is -20"
+        finally:
+            sys.standout = saved_stdout
 
 
 if __name__ == '__main__':
