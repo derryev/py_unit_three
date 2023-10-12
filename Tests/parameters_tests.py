@@ -74,6 +74,45 @@ class MyTestCase(unittest.TestCase):
         finally:
             sys.standout = saved_stdout
 
+    def test_volume_of_cone_with_no_height(self):
+        import sys
+        from io import StringIO
+        saved_stdout = sys.stdout
+        try:
+            out = StringIO()
+            sys.stdout = out
+            addition.volume_of_cone(10, 0)
+            output = out.getvalue().strip()
+            assert output == "The volume of a cone with a height of 0 cannot be calculated"
+        finally:
+            sys.standout = saved_stdout
+
+    def test_volume_of_cone_with_multiples_a(self):
+        import sys
+        from io import StringIO
+        saved_stdout = sys.stdout
+        try:
+            out = StringIO()
+            sys.stdout = out
+            addition.volume_of_cone(10, 3)
+            output = out.getvalue().strip()
+            assert output == "The volume of a cone with a radius of 10 and a height of 3 is 314.0"
+        finally:
+            sys.standout = saved_stdout
+
+    def test_volume_of_cone_with_multiples_b(self):
+        import sys
+        from io import StringIO
+        saved_stdout = sys.stdout
+        try:
+            out = StringIO()
+            sys.stdout = out
+            addition.volume_of_cone(20, 9)
+            output = out.getvalue().strip()
+            assert output == "The volume of a cone with a radius of 20 and a height of 9 is 3768.0"
+        finally:
+            sys.standout = saved_stdout
+
 
 if __name__ == '__main__':
     unittest.main()
