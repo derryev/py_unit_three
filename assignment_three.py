@@ -5,6 +5,7 @@
 def instructions():
     """
     Prints instructions on purpose of and how to use the program to the user.
+    return: nothing
     """
     print("Welcome to the total surface area of a rectangular prism calculator!")
     print("This program computes the total surface area of a rectangular prism.")
@@ -69,6 +70,7 @@ def print_answer(surface_area):
     prints the total surface area of the rectangular prism back to the user with description of what is being printed.
     :param surface_area: the surface area of the prism previously calculated in the calc_surface_area_of_prism function
     (float)
+    return: nothing
     """
     print("The surface area of the prism is", surface_area)
 
